@@ -1,0 +1,46 @@
+$color-green: #57b846;
+
+.inputBox {
+	position: relative;
+	width: 17vw;
+
+	& input {
+		width: 100%;
+		padding: 1vw;
+		outline: none;
+		border: 1px solid rgba(0, 0, 0, 0.089);
+		border-radius: 5px;
+	}
+	& span {
+		position: absolute;
+		left: 1vw;
+		top: 1vw;
+		//letter-spacing: 1px;
+		transition: all 0.3s;
+		pointer-events: none;
+		color: rgba(0, 0, 0, 0.5);
+		font-size: 85%;
+		background: #fff;
+		padding: 3px;
+		letter-spacing: 1px;
+
+		white-space: pre-wrap;
+	}
+
+	& input:not(:placeholder-shown),
+	& input:focus {
+		border: 1px solid $color-green;
+	}
+
+	& input:not(:placeholder-shown) + span,
+	& input:focus + span {
+		letter-spacing: 0;
+		top: -1vh;
+		left: 1vh;
+		border-left: 1px solid $color-green;
+		border-right: 1px solid $color-green;
+		color: $color-green;
+		font-size: 75%;
+		text-transform: uppercase;
+	}
+}

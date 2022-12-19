@@ -1,0 +1,95 @@
+@import '../../variables';
+
+.login-card {
+	height: 73vh;
+	min-height: 40rem;
+	width: 70vw;
+	max-width: 60rem;
+	background-color: #fff;
+	margin: 3vh 2vw;
+	border-radius: 0.6rem;
+
+	display: flex;
+
+	& div {
+		width: 50%;
+	}
+
+	& .image {
+		//border-right: 1px solid rgba(0, 0, 0, 0.089);
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		& #laptop {
+			height: 15vw;
+			width: 15vw;
+			transform-style: preserve-3d;
+			transform: perspective(1000px);
+			border-radius: 50%;
+		}
+
+		& div#animated-icons {
+			//border: 1px solid black;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			translate: -50% -50%;
+			height: 12vw;
+			width: 12vw;
+		}
+
+		& .circle-1 {
+			@include animation-code(circle-spin-1, 13s, 0deg);
+
+			&::after {
+				background: url(../../img/circle.png);
+				@include after-elements(40%);
+			}
+		}
+
+		& .circle-2 {
+			@include animation-code(circle-spin-2, 13s, -180deg);
+
+			&::after {
+				background: url(../../img/circle.png);
+				@include after-elements(10%);
+			}
+		}
+
+		& .triangle-1 {
+			@include animation-code(triangle-spin-1, 13s, -100deg);
+
+			&::after {
+				background: url(../../img/triangle.png);
+				@include after-elements(40%);
+			}
+		}
+
+		& .triangle-2 {
+			@include animation-code(triangle-spin-2, 13s, -260deg);
+
+			&::after {
+				background: url(../../img/triangle.png);
+				@include after-elements(40%);
+			}
+		}
+
+		& :where(.square) {
+			@include animation-code(square-spin, 40s, 90deg);
+
+			&::after {
+				background: url('../../img/checkbox-unchecked.png');
+				@include after-elements(30%);
+
+				animation: spin 50s linear;
+				animation-iteration-count: infinite;
+				animation-fill-mode: forwards;
+			}
+		}
+	}
+}
+
+@include all-key-frames;
