@@ -1,8 +1,16 @@
 $color-green: #57b846;
-
+.form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 .inputBox {
 	position: relative;
 	width: 17vw;
+	font-size: 1.1vw;
+	margin-bottom: 1vw;
 
 	& input {
 		width: 100%;
