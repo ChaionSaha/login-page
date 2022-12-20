@@ -5,6 +5,8 @@ import { Route, Routes } from 'react-router-dom';
 import Home from '../Home/Home';
 import SignUp from '../SignUp.js/SignUp';
 import Login from '../Login.js/Login';
+import SuccessSignUp from '../SuccessSignUp/SuccessSignUp';
+import Error from '../Error/Error';
 
 const Body = () => {
 	return (
@@ -26,7 +28,16 @@ const Body = () => {
 							path='signup'
 							element={<SignUp></SignUp>}
 						></Route>
-						<Route path='*' element={<Home></Home>}></Route>
+
+						<Route
+							path='signupSuccess/:email'
+							element={<SuccessSignUp></SuccessSignUp>}
+						></Route>
+						<Route
+							path='account/:email'
+							element={<SuccessSignUp></SuccessSignUp>}
+						></Route>
+						<Route path='*' element={<Error></Error>}></Route>
 					</Routes>
 				</div>
 			</main>

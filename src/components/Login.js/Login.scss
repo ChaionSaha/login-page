@@ -8,9 +8,19 @@ $color-green: #57b846;
 }
 .inputBox {
 	position: relative;
-	width: 17vw;
+	width: 20vw;
 	font-size: 1.1vw;
 	margin-bottom: 1vw;
+
+	& .passwordSVG {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 115%;
+		width: 2vw;
+		cursor: pointer;
+		transition: all 0.3s;
+	}
 
 	& input {
 		width: 100%;
@@ -23,7 +33,7 @@ $color-green: #57b846;
 		position: absolute;
 		left: 1vw;
 		top: 1vw;
-		//letter-spacing: 1px;
+
 		transition: all 0.3s;
 		pointer-events: none;
 		color: rgba(0, 0, 0, 0.5);

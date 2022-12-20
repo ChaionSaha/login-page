@@ -46,9 +46,21 @@ $font-size: 1.2vw;
 	}
 
 	.signup {
+		text-decoration: underline;
 		transition: all 200ms;
 		&:hover {
 			color: black;
 		}
+	}
+}
+
+.invalid-red {
+	& > input {
+		border-color: red !important;
+	}
+
+	& > span {
+		color: red !important;
+		border-color: red !important;
 	}
 }
