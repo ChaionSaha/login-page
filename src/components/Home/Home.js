@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Home.scss';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Login from '../Login.js/Login';

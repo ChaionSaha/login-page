@@ -3,7 +3,6 @@ import { NavLink, useParams } from 'react-router-dom';
 import './SuccesSignUp.scss';
 import Successmessage from './Successmessage';
 import ErrorMessage from './ErrorMessage';
-import Home from '../Home/Home';
 
 const SuccessSignUp = () => {
 	let { email } = useParams();

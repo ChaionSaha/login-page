@@ -4,7 +4,7 @@ import logo from '../../img/img-01.png';
 import { Route, Routes } from 'react-router-dom';
 import Home from '../Home/Home';
 import SignUp from '../SignUp.js/SignUp';
-import Login from '../Login.js/Login';
+
 import SuccessSignUp from '../SuccessSignUp/SuccessSignUp';
 import Error from '../Error/Error';
 
