@@ -23,7 +23,11 @@ const LoginHome = () => {
 				if (targetName[0].password === pass) {
 					emailInput.classList.remove('invalid-red');
 					passInput.classList.remove('invalid-red');
-					navigate(`account/${targetName[0].id}`);
+					navigate(`account`);
+					localStorage.setItem(
+						'active-account',
+						JSON.stringify(`${email}`)
+					);
 				} else {
 					passInput.classList.add('invalid-red');
 				}

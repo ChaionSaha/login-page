@@ -1,0 +1,42 @@
+.account {
+	box-sizing: border-box;
+
+	// background: conic-gradient(#659999, #f4791f, #659999);
+	background: conic-gradient(#e8a49c, #3c4cad, #240e8b, #3c4cad, #e8a49c);
+	background-size: 500% 500%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	min-height: 100vh;
+	position: relative;
+
+	animation-name: bg;
+	animation-fill-mode: forwards;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes bg {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	25% {
+		background-position: 50% 100%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	75% {
+		background-position: 50% 0%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}

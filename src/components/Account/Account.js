@@ -1,20 +1,21 @@
 import React from 'react';
+import './Account.scss';
 import { useParams } from 'react-router-dom';
 
 const Account = () => {
-	let { id } = useParams();
-	console.log(id);
+	let email = JSON.parse(localStorage.getItem('active-account'));
+
 	const storedAccount = JSON.parse(localStorage.getItem('account'));
 	let target = null;
-	if (storedAccount.some((acc) => acc.id === id)) {
+	if (storedAccount.some((acc) => acc.email === email)) {
 		let targetId = storedAccount.filter((acc) => {
-			return acc.id === id;
+			return acc.email === email;
 		});
 		target = targetId[0];
-		console.log(targetId);
+		console.log(target);
 	}
 
-	return <div>This is a account page</div>;
+	return <div className='account'>This is a account page</div>;
 };
 
 export default Account;
