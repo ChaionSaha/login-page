@@ -5,7 +5,7 @@ import Successmessage from './Successmessage';
 import ErrorMessage from './ErrorMessage';
 
 const SuccessSignUp = () => {
-	let { email } = useParams();
+	let email = JSON.parse(localStorage.getItem('active-account'));
 	const storedAccount = JSON.parse(localStorage.getItem('account'));
 
 	let targetName = null;
@@ -16,6 +16,10 @@ const SuccessSignUp = () => {
 		});
 	}
 
+	const logOut = () => {
+		localStorage.removeItem('active-account');
+	};
+
 	return (
 		<div className='successfulSignup'>
 			{targetName ? (
@@ -24,7 +28,7 @@ const SuccessSignUp = () => {
 				<ErrorMessage />
 			)}
 
-			<NavLink to='/' className='link'>
+			<NavLink to='/' className='link' onClick={() => logOut()}>
 				Log Out
 			</NavLink>
 		</div>

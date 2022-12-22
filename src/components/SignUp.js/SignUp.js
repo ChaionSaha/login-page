@@ -79,15 +79,21 @@ const SignUp = () => {
 
 		if (storedAccount) {
 			if (!storedAccount.some((acc) => acc.email === email)) {
+				newAccount.id = storedAccount.length + 1;
 				savedAccount = [...storedAccount, newAccount];
 				localStorage.setItem('account', JSON.stringify(savedAccount));
 			}
 		} else {
+			newAccount.id = 1;
 			savedAccount.push(newAccount);
 			localStorage.setItem('account', JSON.stringify(savedAccount));
 		}
 
-		navigate(`/signupSuccess/${email}`);
+		localStorage.setItem(
+			'active-account',
+			JSON.stringify(`${newAccount.email}`)
+		);
+		navigate(`/success`);
 	}
 
 	return (

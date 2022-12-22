@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './Home.scss';
+import './LoginHome.scss';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Login from '../Login.js/Login';
 
-const Home = () => {
+const LoginHome = () => {
 	const [email, setEmail] = useState('');
 	const [pass, setPass] = useState('');
 	let navigate = useNavigate();
@@ -23,7 +23,7 @@ const Home = () => {
 				if (targetName[0].password === pass) {
 					emailInput.classList.remove('invalid-red');
 					passInput.classList.remove('invalid-red');
-					navigate(`account/${email}`);
+					navigate(`account/${targetName[0].id}`);
 				} else {
 					passInput.classList.add('invalid-red');
 				}
@@ -45,7 +45,7 @@ const Home = () => {
 			</button>
 			<p>
 				New Here? &nbsp;
-				<NavLink to='/signup' className='link signup'>
+				<NavLink to='signup' className='link signup'>
 					Sign Up
 				</NavLink>
 			</p>
@@ -53,4 +53,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default LoginHome;
