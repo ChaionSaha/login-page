@@ -1,21 +1,57 @@
 import React from 'react';
 import './Account.scss';
-import { useParams } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
+
+import {
+	MapPinIcon,
+	PencilSquareIcon,
+	UserCircleIcon,
+} from '@heroicons/react/24/outline';
 
 const Account = () => {
-	let email = JSON.parse(localStorage.getItem('active-account'));
+	let activeStyle = {
+		color: '#3c4cad',
+	};
 
-	const storedAccount = JSON.parse(localStorage.getItem('account'));
-	let target = null;
-	if (storedAccount.some((acc) => acc.email === email)) {
-		let targetId = storedAccount.filter((acc) => {
-			return acc.email === email;
-		});
-		target = targetId[0];
-		console.log(target);
-	}
+	return (
+		<div className='account'>
+			<div className='inner'>
+				<nav>
+					<NavLink
+						to='details'
+						style={({ isActive }) =>
+							isActive ? activeStyle : undefined
+						}
+						className='link'
+					>
+						<UserCircleIcon></UserCircleIcon>
+					</NavLink>
 
-	return <div className='account'>This is a account page</div>;
+					<NavLink
+						to='edit'
+						style={({ isActive }) =>
+							isActive ? activeStyle : undefined
+						}
+						className='link'
+					>
+						<PencilSquareIcon></PencilSquareIcon>
+					</NavLink>
+					<NavLink
+						to='address'
+						style={({ isActive }) =>
+							isActive ? activeStyle : undefined
+						}
+						className='link'
+					>
+						<MapPinIcon></MapPinIcon>
+					</NavLink>
+				</nav>
+				<div className='details'>
+					<Outlet></Outlet>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Account;

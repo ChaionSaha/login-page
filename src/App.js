@@ -7,6 +7,9 @@ import Account from './components/Account/Account';
 import Error from './components/Error/Error';
 import SignUp from './components/SignUp.js/SignUp';
 import SuccessSignUp from './components/SuccessSignUp/SuccessSignUp';
+import EditAccount from './components/EditAccount/EditAccount';
+import Address from './components/Address/Address';
+import AccountDetails from './components/AccountDetails/AccountDetails';
 
 function App() {
 	return (
@@ -22,7 +25,17 @@ function App() {
 						element={<SuccessSignUp></SuccessSignUp>}
 					></Route>
 				</Route>
-				<Route path='account' element={<Account></Account>}></Route>
+
+				<Route path='account' element={<Account></Account>}>
+					<Route path='/account' element={<AccountDetails />}></Route>
+					<Route path='details' element={<AccountDetails />}></Route>
+					<Route
+						path='edit'
+						element={<EditAccount></EditAccount>}
+					></Route>
+					<Route path='address' element={<Address></Address>}></Route>
+				</Route>
+
 				<Route path='*' element={<Error></Error>}></Route>
 			</Routes>
 		</div>

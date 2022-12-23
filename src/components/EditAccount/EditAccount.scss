@@ -1,0 +1,73 @@
+.edit {
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	font-size: 1.2vw;
+	padding: 0 5vw;
+	padding-top: 2vw;
+	color: #d90429;
+
+	& > p {
+		margin-bottom: 1.3vw;
+		& > span:last-of-type {
+			color: #3c4cad;
+		}
+	}
+
+	& > .details {
+		display: flex;
+
+		align-items: center;
+		.editBox {
+			margin-bottom: 1.3vw;
+		}
+
+		& > .name {
+			margin-right: 6vw;
+		}
+	}
+	& > button {
+		align-self: center;
+		margin-top: 1.5vw;
+		width: fit-content;
+		padding: 0.5vw 2vw;
+	}
+
+	& .editBox {
+		margin-bottom: 1.3vw;
+
+		& > input {
+			width: 20vw;
+			margin-top: 0.5vw;
+			color: #3c4cad;
+			outline: none;
+			padding: 0.5vw;
+			background: transparent;
+
+			border-radius: 0.3vw;
+			transition: all 300ms;
+
+			background: rgba(255, 255, 255, 0.25);
+			box-shadow: 0 0.2vw 1.68vw 0 rgba(171, 175, 238, 0.1);
+			backdrop-filter: blur(0px);
+			-webkit-backdrop-filter: blur(0px);
+			border: 1px solid rgba(255, 255, 255, 0.18);
+
+			&:focus {
+				background: transparent;
+				border: 1px solid rgba(255, 255, 255, 0.5);
+			}
+		}
+
+		& > p {
+			font-weight: 600;
+		}
+
+		& > input[type='file'] {
+			border: none;
+			outline: none;
+		}
+	}
+}
