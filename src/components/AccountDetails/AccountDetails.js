@@ -7,13 +7,13 @@ const AccountDetails = () => {
 
 	let img = null;
 	// let storedImg = JSON.parse(localStorage.getItem(`${target.email}`));
-	console.log(localStorage.getItem(`${target.email}`));
+	// console.log(localStorage.getItem(`${target.email}`));
 
 	return (
 		<div className='account-details'>
 			<div className='image'>
 				<img
-					src={JSON.parse(localStorage.getItem(`${target.email}`))}
+					// src={JSON.parse(localStorage.getItem(`${target.email}`))}
 					alt='Profile'
 				/>
 			</div>
