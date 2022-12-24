@@ -13,11 +13,12 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		& > h1 {
-			color: transparent;
-			font-size: 5vw;
-			font-weight: 900;
-			-webkit-text-stroke: 2px white; //#3c4cad;
+
+		border-radius: 50%;
+		& > img {
+			height: 20vw;
+			width: 20vw;
+			border-radius: 50%;
 		}
 	}
 
@@ -26,24 +27,15 @@
 		justify-content: center;
 		flex-direction: column;
 		padding-left: 2vw;
-		//align-items: center;
 
-		font-size: 1.2vw;
-		//font-weight: 600;
-
-		color: #3c4cad;
+		font-size: 1.7vw;
+		color: #d90429;
+		font-weight: 600;
 
 		& > p {
 			display: flex;
 			flex-direction: column;
 			margin-bottom: 1.2vw;
-
-			& > span:last-of-type {
-				color: white;
-				font-size: 1.7vw;
-				font-weight: 900;
-				-webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
-			}
 		}
 	}
 }

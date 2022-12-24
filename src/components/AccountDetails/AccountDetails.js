@@ -4,19 +4,25 @@ import './AccountDetails.scss';
 
 const AccountDetails = () => {
 	let target = getActiveAccount();
-	console.log(target);
+
+	let storedImg = JSON.parse(localStorage.getItem('img'));
+	let img = null;
+	if (storedImg) {
+		img = storedImg[target.email];
+	}
+
 	return (
 		<div className='account-details'>
 			<div className='image'>
-				<h1>Hi</h1>
+				<img src={img} alt='Profile' />
 			</div>
 			<div className='details'>
 				<p>
-					<span>Name: </span> <span>{target.name}</span>
+					{target.name} {target.lastName}
 				</p>
-				<p>
-					<span>Email: </span> <span>{target.email}</span>
-				</p>
+				<p>{target.email}</p>
+				<p>{target.company}</p>
+				<p>{target.phone}</p>
 			</div>
 		</div>
 	);
