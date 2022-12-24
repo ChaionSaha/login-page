@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getActiveAccount } from '../LocalStorage/LocalStorage';
 import './EditAccount.scss';
-import { NavLink, Navigate, redirect, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const EditAccount = () => {
 	let target = getActiveAccount();
@@ -15,24 +15,21 @@ const EditAccount = () => {
 	const changeDetails = () => {
 		let email = JSON.parse(localStorage.getItem('active-account'));
 		let storedAccount = JSON.parse(localStorage.getItem('account'));
-		let storedImg = {};
 
-		if (localStorage.getItem('img')) {
-			storedImg = JSON.parse(localStorage.getItem('img'));
-		}
 		target.name = firstName;
 		target.lastName = lastName;
 		target.company = company;
 		target.phone = phone;
 
 		if (img) {
+			console.log('image found');
+
 			const reader = new FileReader();
 			reader.readAsDataURL(img);
-			reader.onload = (e) => (target.img = reader.result);
-			console.log(target.img);
-			delete storedImg[email];
-			storedImg[email] = target.img;
-			localStorage.setItem('img', JSON.stringify(storedImg));
+			reader.onload = (e) => {
+				target.img = reader.result;
+				localStorage.setItem(`${email}`, reader.result);
+			};
 		}
 
 		let index = storedAccount.findIndex((acc) => {
@@ -42,8 +39,6 @@ const EditAccount = () => {
 		storedAccount.splice(index, 1);
 		storedAccount = [...storedAccount, target];
 		localStorage.setItem('account', JSON.stringify(storedAccount));
-
-		<Navigate to='/account/details'></Navigate>;
 	};
 
 	return (
@@ -103,7 +98,7 @@ const EditAccount = () => {
 				/>
 			</div>
 			<NavLink
-				to='/account/details'
+				// to='/account/details'
 				onClick={() => changeDetails()}
 				className='button'
 			>
