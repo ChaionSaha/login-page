@@ -3,6 +3,7 @@ import './Account.scss';
 import { NavLink, Outlet } from 'react-router-dom';
 
 import {
+	ArrowRightOnRectangleIcon,
 	MapPinIcon,
 	PencilSquareIcon,
 	UserCircleIcon,
@@ -11,6 +12,10 @@ import {
 const Account = () => {
 	let activeStyle = {
 		color: '#3c4cad',
+	};
+
+	const logOut = () => {
+		localStorage.removeItem('active-account');
 	};
 
 	return (
@@ -44,6 +49,10 @@ const Account = () => {
 						className='link'
 					>
 						<MapPinIcon></MapPinIcon>
+					</NavLink>
+
+					<NavLink to='/' onClick={() => logOut()} className='link'>
+						<ArrowRightOnRectangleIcon></ArrowRightOnRectangleIcon>
 					</NavLink>
 				</nav>
 				<div className='details'>

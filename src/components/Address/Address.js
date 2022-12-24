@@ -5,6 +5,7 @@ import ShowAddress from '../ShowAddress/ShowAddress';
 
 const Address = () => {
 	const [newAddress, setAddress] = useState('');
+	const [addedAddr, setAddedAdr] = useState('');
 	let savedAddress = [];
 	const target = getActiveAccount();
 	let email = JSON.parse(localStorage.getItem('active-account'));
@@ -18,6 +19,8 @@ const Address = () => {
 		let index = storedAccount.findIndex((acc) => {
 			return acc.email === email;
 		});
+
+		setAddedAdr(newAddress);
 
 		storedAccount[index].address = savedAddress;
 		localStorage.setItem('account', JSON.stringify(storedAccount));
@@ -33,7 +36,14 @@ const Address = () => {
 				/>
 				<button onClick={() => addAddress()}>Save</button>
 			</div>
-			<div className='show'></div>
+			<div className='show'>
+				{savedAddress.map((adr) => (
+					<ShowAddress adr={adr}></ShowAddress>
+				))}
+				{useEffect(() => {
+					<ShowAddress adr={addedAddr}></ShowAddress>;
+				}, [addedAddr])}
+			</div>
 		</div>
 	);
 };

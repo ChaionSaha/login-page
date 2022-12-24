@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getActiveAccount } from '../LocalStorage/LocalStorage';
 import './EditAccount.scss';
-import { Navigate, redirect, useNavigate } from 'react-router-dom';
+import { NavLink, Navigate, redirect, useNavigate } from 'react-router-dom';
 
 const EditAccount = () => {
 	let target = getActiveAccount();
@@ -102,7 +102,13 @@ const EditAccount = () => {
 					onChange={(e) => setImg(e.target.files[0])}
 				/>
 			</div>
-			<button onClick={() => changeDetails()}>Change Details</button>
+			<NavLink
+				to='/account/details'
+				onClick={() => changeDetails()}
+				className='button'
+			>
+				Change Details
+			</NavLink>
 		</div>
 	);
 };

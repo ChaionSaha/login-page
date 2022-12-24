@@ -1,7 +1,7 @@
 import React from 'react';
 
-const ShowAddress = ({ address }) => {
-	return <div>{address}</div>;
+const ShowAddress = ({ adr }) => {
+	return <div className='single-address'>{adr}</div>;
 };
 
 export default ShowAddress;

@@ -28,7 +28,7 @@
 			margin-right: 6vw;
 		}
 	}
-	& > button {
+	& > .button {
 		align-self: center;
 		margin-top: 1.5vw;
 		width: fit-content;
@@ -72,7 +72,7 @@
 		}
 	}
 
-	& > button {
+	& > .button {
 		border: 1px solid rgba(255, 255, 255, 0.18);
 
 		cursor: pointer;
@@ -80,6 +80,9 @@
 		background: transparent;
 		font-weight: 600;
 		color: #d90429;
+
+		// width: 20vw;
+		text-decoration: none;
 
 		&::after {
 			content: '';
