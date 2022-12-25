@@ -5,7 +5,7 @@ import './AccountDetails.scss';
 const AccountDetails = () => {
 	let target = getActiveAccount();
 
-	let img = null;
+	//let img = null;
 	// let storedImg = JSON.parse(localStorage.getItem(`${target.email}`));
 	// console.log(localStorage.getItem(`${target.email}`));
 

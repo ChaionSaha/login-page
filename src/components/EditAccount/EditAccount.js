@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { getActiveAccount } from '../LocalStorage/LocalStorage';
 import './EditAccount.scss';
 import { NavLink } from 'react-router-dom';

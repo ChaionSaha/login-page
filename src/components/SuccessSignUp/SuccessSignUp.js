@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+
 import './SuccesSignUp.scss';
 import Successmessage from './Successmessage';
 import ErrorMessage from './ErrorMessage';
@@ -15,10 +15,6 @@ const SuccessSignUp = () => {
 			return acc.email === email;
 		});
 	}
-
-	const logOut = () => {
-		localStorage.removeItem('active-account');
-	};
 
 	return (
 		<div className='successfulSignup'>
