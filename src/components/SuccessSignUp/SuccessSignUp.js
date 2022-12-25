@@ -27,10 +27,6 @@ const SuccessSignUp = () => {
 			) : (
 				<ErrorMessage />
 			)}
-
-			<NavLink to='/' className='link' onClick={() => logOut()}>
-				Log Out
-			</NavLink>
 		</div>
 	);
 };

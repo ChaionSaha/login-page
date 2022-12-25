@@ -22,8 +22,6 @@ const EditAccount = () => {
 		target.phone = phone;
 
 		if (img) {
-			console.log('image found');
-
 			const reader = new FileReader();
 			reader.readAsDataURL(img);
 			reader.onload = (e) => {
@@ -98,7 +96,7 @@ const EditAccount = () => {
 				/>
 			</div>
 			<NavLink
-				// to='/account/details'
+				to='/account/details'
 				onClick={() => changeDetails()}
 				className='button'
 			>

@@ -94,6 +94,9 @@ const SignUp = () => {
 			JSON.stringify(`${newAccount.email}`)
 		);
 		navigate(`/success`);
+		setTimeout(() => {
+			navigate('/account');
+		}, 1500);
 	}
 
 	return (
