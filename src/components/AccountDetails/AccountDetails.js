@@ -8,15 +8,13 @@ const AccountDetails = () => {
 	let activeAccount = JSON.parse(localStorage.getItem('active-account'));
 
 	let storedImg = JSON.parse(localStorage.getItem(`img`));
-	useEffect(() => {
-		img = storedImg[activeAccount];
-	}, [storedImg]);
+	// useEffect(() => {
+	// 	img = storedImg[activeAccount];
+	// }, [storedImg]);
 
 	return (
 		<div className='account-details'>
-			<div className='image'>
-				<img src={img} alt='Profile' />
-			</div>
+			<div className='image'>{/* <img src={img} alt='Profile' /> */}</div>
 			<div className='details'>
 				<p>
 					{target.name} {target.lastName}
