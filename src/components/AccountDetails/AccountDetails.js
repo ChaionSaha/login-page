@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { getActiveAccount } from '../LocalStorage/LocalStorage';
 import './AccountDetails.scss';
 
 const AccountDetails = () => {
 	let target = getActiveAccount();
+	let img;
+	let activeAccount = JSON.parse(localStorage.getItem('active-account'));
 
-	//let img = null;
-	// let storedImg = JSON.parse(localStorage.getItem(`${target.email}`));
-	// console.log(localStorage.getItem(`${target.email}`));
+	let storedImg = JSON.parse(localStorage.getItem(`img`));
+	useEffect(() => {
+		img = storedImg[activeAccount];
+	}, [storedImg]);
 
 	return (
 		<div className='account-details'>
 			<div className='image'>
-				<img
-					// src={JSON.parse(localStorage.getItem(`${target.email}`))}
-					alt='Profile'
-				/>
+				<img src={img} alt='Profile' />
 			</div>
 			<div className='details'>
 				<p>
