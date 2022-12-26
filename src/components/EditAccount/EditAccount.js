@@ -5,9 +5,9 @@ import { NavLink } from 'react-router-dom';
 
 const EditAccount = () => {
 	let target = getActiveAccount();
-	// let storedImg = {};
-	// if (localStorage.getItem('img'))
-	// 	storedImg = JSON.parse(localStorage.getItem('img'));
+	let storedImg = {};
+	if (localStorage.getItem('img'))
+		storedImg = JSON.parse(localStorage.getItem('img'));
 
 	const [firstName, setFirstName] = useState(target.name);
 	const [lastName, setLastName] = useState(target.lastName);
