@@ -13,7 +13,7 @@ $color-blue: #3c4cad;
 	color: #3c4cad;
 
 	& > p {
-		margin-bottom: 1.3vw;
+		margin-bottom: 2.5vw;
 		& > span:last-of-type {
 			color: #000;
 		}
@@ -21,8 +21,8 @@ $color-blue: #3c4cad;
 
 	& > .details {
 		display: flex;
-
 		align-items: center;
+		margin-bottom: 2vw;
 		.editBox {
 			margin-bottom: 1.3vw;
 		}

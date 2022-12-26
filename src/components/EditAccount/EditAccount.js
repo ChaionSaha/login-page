@@ -5,20 +5,20 @@ import { NavLink } from 'react-router-dom';
 
 const EditAccount = () => {
 	let target = getActiveAccount();
-	let storedImg = {};
-	if (localStorage.getItem('img'))
-		storedImg = JSON.parse(localStorage.getItem('img'));
+	// let storedImg = {};
+	// if (localStorage.getItem('img'))
+	// 	storedImg = JSON.parse(localStorage.getItem('img'));
 
 	const [firstName, setFirstName] = useState(target.name);
 	const [lastName, setLastName] = useState(target.lastName);
 	const [company, setCompany] = useState(target.company);
 	const [phone, setPhone] = useState(target.phone);
-	const [img, setImg] = useState();
+	// const [img, setImg] = useState();
 
 	const changeDetails = () => {
 		let email = JSON.parse(localStorage.getItem('active-account'));
 		let storedAccount = JSON.parse(localStorage.getItem('account'));
-		let storedImg = JSON.parse(localStorage.getItem('img'));
+		//let storedImg = JSON.parse(localStorage.getItem('img'));
 
 		target.name = firstName;
 		target.lastName = lastName;
@@ -28,20 +28,20 @@ const EditAccount = () => {
 		let index = storedAccount.findIndex((acc) => {
 			return acc.email === email;
 		});
-		if (img) {
-			const reader = new FileReader();
-			reader.readAsDataURL(img);
-			reader.onload = (e) => {
-				const loader = async () => {
-					storedImg[email] = reader.result;
-					await localStorage.setItem(
-						'img',
-						JSON.stringify(storedImg)
-					);
-				};
-				loader();
-			};
-		}
+		// if (img) {
+		// 	const reader = new FileReader();
+		// 	reader.readAsDataURL(img);
+		// 	reader.onload = (e) => {
+		// 		const loader = async () => {
+		// 			storedImg[email] = reader.result;
+		// 			await localStorage.setItem(
+		// 				'img',
+		// 				JSON.stringify(storedImg)
+		// 			);
+		// 		};
+		// 		loader();
+		// 	};
+		// }
 
 		storedAccount.splice(index, 1);
 		storedAccount = [...storedAccount, target];
@@ -61,7 +61,7 @@ const EditAccount = () => {
 						<input
 							type='text'
 							id='firstName'
-							placeholder={target.name}
+							value={firstName}
 							onChange={(e) => setFirstName(e.target.value)}
 						/>
 					</div>
@@ -70,7 +70,7 @@ const EditAccount = () => {
 						<input
 							type='text'
 							id='lastName'
-							placeholder={target.lastName}
+							value={lastName}
 							onChange={(e) => setLastName(e.target.value)}
 						/>
 					</div>
@@ -81,7 +81,7 @@ const EditAccount = () => {
 						<input
 							type='text'
 							id='company'
-							placeholder={target.company}
+							value={company}
 							onChange={(e) => setCompany(e.target.value)}
 						/>
 					</div>
@@ -90,20 +90,20 @@ const EditAccount = () => {
 						<input
 							type='text'
 							id='phone'
-							placeholder={target.phone}
+							value={phone}
 							onChange={(e) => setPhone(e.target.value)}
 						/>
 					</div>
 				</div>
 			</div>
-			<div className='editBox'>
+			{/* <div className='editBox'>
 				<label htmlFor='image'>Image: </label>
 				<input
 					type='file'
 					id='image'
 					onChange={(e) => setImg(e.target.files[0])}
 				/>
-			</div>
+			</div> */}
 			<NavLink
 				to='/account/details'
 				onClick={() => changeDetails()}

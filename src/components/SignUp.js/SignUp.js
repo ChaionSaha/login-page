@@ -158,7 +158,7 @@ const SignUp = () => {
 						Sign Up
 					</button>
 					<NavLink to='/' className='loginBtn'>
-						Log In
+						Already have an account?
 					</NavLink>
 				</div>
 			</div>
