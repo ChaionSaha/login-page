@@ -1,3 +1,6 @@
+$color-green: #57b846;
+$color-blue: #3c4cad;
+
 .address {
 	display: flex;
 	justify-content: center;
@@ -48,7 +51,7 @@
 			position: relative;
 			background: transparent;
 			font-weight: 600;
-			color: #d90429;
+			color: $color-blue;
 
 			&::after {
 				content: '';
@@ -67,6 +70,7 @@
 
 			&:hover {
 				border: 1px solid rgba(255, 255, 255, 0.5);
+				color: darken($color-blue, 10%);
 				&::after {
 					transform: scale(2);
 					opacity: 0;

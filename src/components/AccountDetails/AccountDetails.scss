@@ -13,11 +13,15 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		// font-size: 10vw;
+		// font-weight: 900;
+		// -webkit-text-stroke: 1px white;
+		// color: transparent;
 
 		border-radius: 50%;
 		& > img {
-			height: 20vw;
-			width: 20vw;
+			height: 18vw;
+			width: 18vw;
 			border-radius: 50%;
 		}
 	}
@@ -29,7 +33,7 @@
 		padding-left: 2vw;
 
 		font-size: 1.7vw;
-		color: #d90429;
+		color: #000;
 		font-weight: 600;
 
 		& > p {

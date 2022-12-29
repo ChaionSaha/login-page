@@ -94,6 +94,9 @@ const SignUp = () => {
 			JSON.stringify(`${newAccount.email}`)
 		);
 		navigate(`/success`);
+		setTimeout(() => {
+			navigate('/account');
+		}, 1500);
 	}
 
 	return (
@@ -155,7 +158,7 @@ const SignUp = () => {
 						Sign Up
 					</button>
 					<NavLink to='/' className='loginBtn'>
-						Log In
+						Already have an account?
 					</NavLink>
 				</div>
 			</div>

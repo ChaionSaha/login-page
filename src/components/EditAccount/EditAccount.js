@@ -51,7 +51,7 @@ const EditAccount = () => {
 						<input
 							type='text'
 							id='firstName'
-							placeholder={target.name}
+							value={firstName}
 							onChange={(e) => setFirstName(e.target.value)}
 						/>
 					</div>
@@ -60,7 +60,7 @@ const EditAccount = () => {
 						<input
 							type='text'
 							id='lastName'
-							placeholder={target.lastName}
+							value={lastName}
 							onChange={(e) => setLastName(e.target.value)}
 						/>
 					</div>
@@ -71,7 +71,7 @@ const EditAccount = () => {
 						<input
 							type='text'
 							id='company'
-							placeholder={target.company}
+							value={company}
 							onChange={(e) => setCompany(e.target.value)}
 						/>
 					</div>
@@ -80,7 +80,7 @@ const EditAccount = () => {
 						<input
 							type='text'
 							id='phone'
-							placeholder={target.phone}
+							value={phone}
 							onChange={(e) => setPhone(e.target.value)}
 						/>
 					</div>

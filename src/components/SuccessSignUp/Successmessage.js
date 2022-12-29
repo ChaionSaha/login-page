@@ -7,6 +7,7 @@ const Successmessage = ({ targetName }) => {
 				<span>Welcome</span>
 				<span>{targetName[0].name}</span>
 			</h1>
+			<h2>Redirecting to your account</h2>
 		</div>
 	);
 };
