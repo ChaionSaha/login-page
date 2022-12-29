@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.scss';
 import Body from './components/Body/Body';
 import { Route, Routes } from 'react-router-dom';
@@ -10,6 +9,7 @@ import SuccessSignUp from './components/SuccessSignUp/SuccessSignUp';
 import EditAccount from './components/EditAccount/EditAccount';
 import Address from './components/Address/Address';
 import AccountDetails from './components/AccountDetails/AccountDetails';
+import { useEffect } from 'react';
 
 function App() {
 	return (

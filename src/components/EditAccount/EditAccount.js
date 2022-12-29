@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { getActiveAccount } from '../LocalStorage/LocalStorage';
 import './EditAccount.scss';
 import { NavLink } from 'react-router-dom';
@@ -22,13 +22,10 @@ const EditAccount = () => {
 		target.phone = phone;
 
 		if (img) {
-			console.log('image found');
-
 			const reader = new FileReader();
 			reader.readAsDataURL(img);
 			reader.onload = (e) => {
-				target.img = reader.result;
-				localStorage.setItem(`${email}`, reader.result);
+				localStorage.setItem(`${email}`, JSON.stringify(reader.result));
 			};
 		}
 
@@ -98,7 +95,7 @@ const EditAccount = () => {
 				/>
 			</div>
 			<NavLink
-				// to='/account/details'
+				to='/account/details'
 				onClick={() => changeDetails()}
 				className='button'
 			>
